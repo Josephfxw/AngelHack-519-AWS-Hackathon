@@ -3,3 +3,16 @@
     height: 200px;
 }
 
+#main-icon {
+    color: darkblue;
+    size: 30px;
+}
+
+.navbar {
+    background-color: white;
+}
+
+nav { 
+    padding: 0;
+    margin: 0;
+}
