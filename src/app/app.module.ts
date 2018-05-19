@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { DistanceComponent } from './distance/distance.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LandingComponent } from './landing/landing.component';
-import { MaterialModule } from './material.module';
+import { MaterialModule } from './my-module/my-module.module';
 
 
 const appRoutes: Routes = [
