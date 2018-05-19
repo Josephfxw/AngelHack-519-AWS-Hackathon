@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import {MatSort, MatTableDataSource} from '@angular/material';
+import {Housing} from '../models/housing';
 
 @Component({
   selector: 'app-distance',
@@ -7,7 +8,7 @@ import {MatSort, MatTableDataSource} from '@angular/material';
   styleUrls: ['./distance.component.css']
 })
 export class DistanceComponent implements OnInit {
-  displayedColumns = ['position', 'name', 'weight', 'symbol'];
+  displayedColumns = ['Address', 'Work Distance', 'weight', 'symbol'];
   dataSource = new MatTableDataSource<Element>(ELEMENT_DATA);
 
   @ViewChild(MatSort) sort: MatSort;
