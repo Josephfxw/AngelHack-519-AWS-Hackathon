@@ -1,42 +1,27 @@
-<div class="containe">
-    <div class="row">
-      <div class="col-lg-12">
-          <img src="../assets/houses-lan.JPG">
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-6 ">
-        <img class="bottomRight fade-in-med" src="https://i.imgur.com/qaYYAQJ.jpg">
-      </div>
-      <div class="col-md-6 right-slide">
-        <div class="blurb">
-          <h1>Saving your time <i id="timeIcon" class="far fa-clock" aria-hidden="true"></i></h1>
-           <p>Time spent on the road is less time spent with family and friends. GridKey is the solution to minimize traffic times for your frequent commutes.</p>
-        </div>
-      </div>
-    </div>
-      <div class="row">
-        <div class="col-md-6 left-slide">
-          <div class="blurb">
-            <h1>Lowering Stress <i id="heartIcon" class="fa fa-heart" aria-hidden="true"></i></h1>
-            <p>Long commutes increase stress and are associated with higher weight and heart risks. Reducing your time on the road is a simple way to improve your health.</p>
-          </div>
-        </div>
-        <div class="col-md-6 fade-in-med">
-          <img class="topLeftBottom fade-in-normal" id="bottomRight" src="https://i.imgur.com/HpzjHPK.jpg" >
-        </div>
-      </div>
-        <div class="row">
-          <div class="col-md-6 slide-right">
-            <img class="topRight" src="https://i.imgur.com/4rRj50c.jpg">
-          </div>
-            <div class="col-md-6">
-              <div class="blurb fade-in-med slide-left">
-                <h1>Protecting the Environment
-                <i id="leafIcon"class="fab fa-envira" aria-hidden="true"></i>
-                </h1>
-                <p>Traffic increases pollution and vehicle emissions. Reducing traffic is a win/win way of protecting the environment and saving your time.</p>
-              </div>
+
+<div class="container-fluid">
+
+      <div class="center-text">
+          <div class="example-container">
+            <h3 class="center">Sign Up <i class="fa fa-user-plus" aria-hidden="true"></i></h3>
+              <mat-form-field>
+                <input matInput placeholder="Username">
+              </mat-form-field>
+              <mat-form-field>
+                  <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'">
+                  <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Work Address">
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="School Address">
+                </mat-form-field>
+                <div id="login-row" class="button-row">
+                    <button mat-button>Cancel</button>
+                    <button mat-button color="primary">Create</button>
+                </div>  
             </div>
-        </div>
-  </div>
+      </div>
+
+</div>
