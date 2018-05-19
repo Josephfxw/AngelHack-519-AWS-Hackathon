@@ -9,3 +9,12 @@
   .mat-header-cell.mat-sort-header-sorted {
     color: black;
   }
+
+  .container-fluid {
+    margin-top: 10%;
+  }
+
+  .chart-container {
+    width: 80%;
+    margin: auto;
+  }
