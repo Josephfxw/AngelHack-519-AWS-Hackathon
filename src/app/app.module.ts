@@ -7,10 +7,11 @@ import { DistanceComponent } from './distance/distance.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LandingComponent } from './landing/landing.component';
 import { MaterialModule } from './my-module/my-module.module';
-
-import { AngularFireModule,  } from 'angularfire2';
+import { FormsModule} from '@angular/forms'; 
+import { AngularFireModule  } from 'angularfire2';
+import {AngularFireDatabaseModule} from 'angularfire2/database';
 import { environment } from '../environments/environment';
-
+import { AngularFireDatabase} from "angularfire2/database";
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AboutComponent } from './about/about.component';
 
@@ -34,6 +35,7 @@ const appRoutes: Routes = [
     MaterialModule,
     RouterModule.forRoot(appRoutes),
     AngularFirestoreModule,
+    AngularFireDatabaseModule,
     AngularFireModule.initializeApp(environment.firebase)
   ],
   providers: [],

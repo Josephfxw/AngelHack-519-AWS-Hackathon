@@ -2,10 +2,13 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import {MatSort, MatTableDataSource} from '@angular/material';
 import {Housing} from '../models/housing';
 
+import {AngularFireDatabase, AngularFireList, AngularFireObject} from 'angularfire2/database';
+
 @Component({
   selector: 'app-distance',
   templateUrl: './distance.component.html',
-  styleUrls: ['./distance.component.css']
+  styleUrls: ['./distance.component.css'],
+  providers: [AngularFireDatabase]
 })
 export class DistanceComponent implements OnInit {
   displayedColumns = ['Address', 'Work Distance', 'Work Time', 
@@ -13,9 +16,24 @@ export class DistanceComponent implements OnInit {
  // dataSource = new MatTableDataSource<Element>(ELEMENT_DATA);
  dataSource = new MatTableDataSource<Housing>(housingArr);
   @ViewChild(MatSort) sort: MatSort;
+  items: AngularFireList<any[]>;
+  apartments: AngularFireObject<any>;
+  apts = [];
 
 
-  constructor() { }
+  constructor(db: AngularFireDatabase) {
+    this.apts = new Array();
+    this.items = db.list('/apartments');
+    console.log(db.object('/apartments').valueChanges().subscribe({
+      next(num){
+          console.log(num);
+         // this.apts.push(num);
+      }}
+
+    ));
+    //this.apartments = db.list('/apartments');
+
+   }
 
   ngOnInit() {
     this.dataSource.sort = this.sort;
@@ -23,30 +41,14 @@ export class DistanceComponent implements OnInit {
   
 
 }
-export interface Element {
-  name: string;
-  position: number;
-  weight: number;
-  symbol: string;
-}
-
-const ELEMENT_DATA: Element[] = [
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
-  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
-  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
-  {position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C'},
-  {position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N'},
-  {position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O'},
-  {position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F'},
-  {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
-
-];
+ 
 
 const housingArr: Housing[] = [
-    new Housing('google.com', 'Rector Place', 34, 42,55, 65, 800),
-    new Housing('google.com', 'Alpha Place', 15, 25,24, 25, 900)
+    new Housing('https://www.zillow.com/homes/for_rent/New-Brunswick-NJ-08901/5Y2YXC_bldg/61245_rid/featured_sort/40.535133,-74.379416,40.440349,-74.503012_rect/12_zm/', '5 Dennis St, New Brunswick, NJ 08901', 34.9, 44, 48.3, 56, 1600),
+    new Housing('https://www.zillow.com/homes/for_rent/New-Brunswick-NJ-08901/5Xt3fR_bldg/61245_rid/featured_sort/40.529784,-74.375639,40.445706,-74.50696_rect/12_zm/', '10 Commercial Ave, New Brunswick, NJ', 34.5, 43, 47.9, 55, 1945),
+    new Housing('google.com', '10 Landing Ln, New Brunswick, NJ', 36.6, 46, 50, 58, 1270),
+    new Housing('google.com', '110 Somerset St, New Brunswick, NJ 08901', 35.7, 46, 49.1, 58, 1954),
+    new Housing('google.com', '1 Richmond St, New Brunswick, NJ', 34.9, 44, 48.3, 56, 2062)
 
 
 ]
