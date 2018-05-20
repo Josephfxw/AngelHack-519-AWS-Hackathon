@@ -8,6 +8,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LandingComponent } from './landing/landing.component';
 import { MaterialModule } from './my-module/my-module.module';
 
+import {FormsModule} from '@angular/forms';
+
+
+import {AngularFireModule} from 'angularfire2';
+import {AngularFireDatabaseModule} from 'angularfire2/database';
+
+import {environment} from '../environments/environment';
 
 const appRoutes: Routes = [
 
@@ -26,7 +33,10 @@ const appRoutes: Routes = [
     BrowserModule,
     BrowserAnimationsModule,
     MaterialModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    FormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule, // for database
   ],
   providers: [],
   bootstrap: [AppComponent]

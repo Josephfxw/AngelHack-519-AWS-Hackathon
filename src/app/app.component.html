@@ -13,7 +13,7 @@
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      
+
       <ul class="nav navbar-nav navbar-right">
         <li><a routerLinkActive="active" routerLink="distance"><i class="fa fa-map-pin" aria-hidden="true"></i> Commute</a></li>
         <li><a href="#"><i class="fa fa-book" aria-hidden="true"></i> Schools</a></li>
@@ -33,10 +33,44 @@
 
           </div>
           <div class="col-md-6">
-            
+
           </div>
         </div>
   </div>
-   
+
 </div>
 
+
+<div class="container-fluid">
+	<div style="color: blue;">
+		<h1>{{title}}</h1>
+		<h3>{{description}}</h3>
+	</div>
+
+	<div style="width: 300px;">
+		<form (ngSubmit)="onSubmit()">
+			<div class="form-group">
+				<label for="item">Item</label>
+        <input type="text" class="form-control" placeholder="Enter content..." id="item"
+					required [(ngModel)]="itemValue" name="item">
+			</div>
+
+			<div class="btn-group">
+				<button type="submit" class="btn btn-success">Submit</button>
+			</div>
+		</form>
+	</div>
+
+	<h2>Content from Firebase</h2>
+	<div class="col-md-3">
+
+
+    <p *ngFor="let item of items | async" >
+     {{item.content}}
+    </p>
+
+
+
+
+	</div>
+</div>
