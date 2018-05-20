@@ -8,6 +8,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LandingComponent } from './landing/landing.component';
 import { MaterialModule } from './my-module/my-module.module';
 
+import { AngularFireModule,  } from 'angularfire2';
+import { environment } from '../environments/environment';
+
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AboutComponent } from './about/about.component';
 
 const appRoutes: Routes = [
 
@@ -20,13 +25,16 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     DistanceComponent,
-    LandingComponent
+    LandingComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MaterialModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    AngularFirestoreModule,
+    AngularFireModule.initializeApp(environment.firebase)
   ],
   providers: [],
   bootstrap: [AppComponent]

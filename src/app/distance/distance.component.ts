@@ -14,6 +14,7 @@ export class DistanceComponent implements OnInit {
  dataSource = new MatTableDataSource<Housing>(housingArr);
   @ViewChild(MatSort) sort: MatSort;
 
+
   constructor() { }
 
   ngOnInit() {
