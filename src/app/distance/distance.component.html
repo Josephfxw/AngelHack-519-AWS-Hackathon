@@ -2,31 +2,63 @@
   </div>
 <div class="container-fluid">
   <div class="chart-container">
-<div class="example-container mat-elevation-z1">
+<div class="example-container mat-elevation-z3">
   <table mat-table #table [dataSource]="dataSource" matSort>
 
     <!-- Position Column -->
-    <ng-container matColumnDef="position">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> No. </th>
-      <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+    <ng-container matColumnDef="Address">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header="address">Address 
+          <span class="spacer"></span>
+          <i class="fa fa-location-arrow" aria-hidden="true"></i>
+      </th>
+      <td mat-cell *matCellDef="let element">
+        <a href="{{element.url}}">{{element.address}}</a>
+        </td>
     </ng-container>
 
     <!-- Name Column -->
-    <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
-      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    <ng-container matColumnDef="Work Distance">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header="work_distance"> Work 
+          <span class="spacer"></span> 
+          <i class="fa fa-road" aria-hidden="true"></i>
+      </th>
+      <td id="workD" mat-cell *matCellDef="let element"> {{element.work_distance}} </td>
     </ng-container>
+
+ 
+    <ng-container matColumnDef="Work Time">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="work_time">
+          Work 
+          <span class="spacer"></span>
+          <i class="fa fa-clock-o" aria-hidden="true"></i></th>
+        <td mat-cell *matCellDef="let element"> {{element.work_time}} </td>
+      </ng-container>
+      *
 
     <!-- Weight Column -->
-    <ng-container matColumnDef="weight">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Weight </th>
-      <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+    <ng-container matColumnDef="School Distance">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header="school_distance"> School
+          <span class="spacer"></span> 
+          <i class="fa fa-road" aria-hidden="true"></i>
+      </th>
+      <td mat-cell *matCellDef="let element"> {{element.school_distance}} </td>
     </ng-container>
 
+    <ng-container matColumnDef="School Time">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="school_time">School
+            <span class="spacer"></span> 
+            <i class="fa fa-clock-o" aria-hidden="true"></i>
+        </th>
+        <td mat-cell *matCellDef="let element"> {{element.school_time}} </td>
+      </ng-container>
+
     <!-- Symbol Column -->
-    <ng-container matColumnDef="symbol">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Symbol </th>
-      <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+    <ng-container matColumnDef="Rent">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header="rent"> Rent
+          <span class="spacer"></span> 
+          <i class="fa fa-usd" aria-hidden="true"></i>
+      </th>
+      <td mat-cell *matCellDef="let element"> {{element.rent}} </td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

@@ -8,9 +8,10 @@ import {Housing} from '../models/housing';
   styleUrls: ['./distance.component.css']
 })
 export class DistanceComponent implements OnInit {
-  displayedColumns = ['Address', 'Work Distance', 'weight', 'symbol'];
-  dataSource = new MatTableDataSource<Element>(ELEMENT_DATA);
-
+  displayedColumns = ['Address', 'Work Distance', 'Work Time', 
+  'School Distance', 'School Time', 'Rent'];
+ // dataSource = new MatTableDataSource<Element>(ELEMENT_DATA);
+ dataSource = new MatTableDataSource<Housing>(housingArr);
   @ViewChild(MatSort) sort: MatSort;
 
   constructor() { }
@@ -41,3 +42,10 @@ const ELEMENT_DATA: Element[] = [
   {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
 
 ];
+
+const housingArr: Housing[] = [
+    new Housing('google.com', 'Rector Place', 34, 42,55, 65, 800),
+    new Housing('google.com', 'Alpha Place', 15, 25,24, 25, 900)
+
+
+]
