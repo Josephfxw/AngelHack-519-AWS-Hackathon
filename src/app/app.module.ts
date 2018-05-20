@@ -18,7 +18,8 @@ import { AboutComponent } from './about/about.component';
 const appRoutes: Routes = [
 
   { path: '', component: LandingComponent },
-  { path: 'distance', component: DistanceComponent }
+  { path: 'distance', component: DistanceComponent },
+  { path: 'about', component: AboutComponent }
 
 ];
 
