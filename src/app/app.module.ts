@@ -8,11 +8,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LandingComponent } from './landing/landing.component';
 import { MaterialModule } from './my-module/my-module.module';
 
-import { AngularFireModule,  } from 'angularfire2';
+import { AngularFireModule  } from 'angularfire2';
 import { environment } from '../environments/environment';
 
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AboutComponent } from './about/about.component';
+
+import {FormsModule} from '@angular/forms';
+
+
+
+import {AngularFireDatabaseModule} from 'angularfire2/database';
 
 const appRoutes: Routes = [
 
@@ -33,8 +39,10 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
     MaterialModule,
     RouterModule.forRoot(appRoutes),
-    AngularFirestoreModule,
-    AngularFireModule.initializeApp(environment.firebase)
+
+    AngularFireModule.initializeApp(environment.firebase),
+    FormsModule,
+    AngularFireDatabaseModule // for database
   ],
   providers: [],
   bootstrap: [AppComponent]
