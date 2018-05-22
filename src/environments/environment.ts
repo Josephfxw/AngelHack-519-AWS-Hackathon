@@ -6,12 +6,12 @@ export const environment = {
   production: false,
 
     firebase: {
-      apiKey: "AIzaSyAE9Rv0RgE9TfsWhPI4F-hbKPIYSeXQfFU",
-      authDomain: "angular-boozekick.firebaseapp.com",
-      databaseURL: "https://angular-boozekick.firebaseio.com",
-      projectId: "angular-boozekick",
-      storageBucket: "angular-boozekick.appspot.com",
-      messagingSenderId: "315171701048"
+          apiKey: "AIzaSyB25FGsOu--lROPLhSaaSe2plETGI5vvQ4",
+          authDomain: "angelhack-firebase-project.firebaseapp.com",
+          databaseURL: "https://angelhack-firebase-project.firebaseio.com",
+          projectId: "angelhack-firebase-project",
+          storageBucket: "angelhack-firebase-project.appspot.com",
+          messagingSenderId: "805021557584"
     }
 };
 
